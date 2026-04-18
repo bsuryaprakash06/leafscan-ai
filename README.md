@@ -1,7 +1,7 @@
 <div align="center">
   <img src="./frontend/public/logos/logo.png" alt="LeafScan AI Logo" width="120" style="border-radius: 20%;" />
   
-  <h1>🌱 LeafScan AI</h1>
+  <h1>LeafScan AI</h1>
   <p><strong>A Full-Stack Deep Learning Application for Real-Time Plant Disease Diagnosis</strong></p>
 
   <div>
@@ -26,11 +26,11 @@
 
 <hr />
 
-## 📖 Overview
+## Overview
 
 **LeafScan AI** is an AI-powered agricultural tool designed to empower farmers and agronomists with instantaneous plant disease detection. Early disease identification prevents crop loss and increases agricultural yields by up to 30%. Through an ultra-fast REST API and a beautifully designed interactive user interface, anyone can upload a picture of a leaf and receive professional diagnostic verdicts in seconds.
 
-## ✨ Key Features
+## Key Features
 
 - **Blazing Fast API**: Diagnostics processed in **<2 Seconds** using lightweight AI deployments.
 - **Dynamic Localization**: Built-in multi-language string support (English, Tamil, Hindi) strictly engineered for regional accessibility.
@@ -39,7 +39,7 @@
 
 ---
 
-## 🧠 Model & Dataset
+## Model & Dataset
 
 This application utilizes a fine-tuned **MobileNetV2** deep learning architecture strictly optimized for edge/mobile delivery via PyTorch. 
 
@@ -48,13 +48,13 @@ This application utilizes a fine-tuned **MobileNetV2** deep learning architectur
 - **Supported Crops**: `14` (Tomato, Potato, Apple, Corn, Grape, Pepper, etc.)
 - **Disease Classes**: `38` 
 
-### 📊 Verdicts & Performance
+### Verdicts & Performance
 - **Test Accuracy**: **97%**
 - **Confidence Output**: Provides Top-3 differential diagnoses to prevent false-negative treatment routes.
 
 ---
 
-## 🛠️ Architecture
+## Architecture
 
 The codebase operates in a monorepo format seamlessly segregating Frontend and Backend environments:
 
@@ -67,7 +67,7 @@ The codebase operates in a monorepo format seamlessly segregating Frontend and B
 
 ---
 
-## 🚀 Live Deployment Links
+## Live Deployment Links
 
 - **Frontend Web App**: Hosted on Vercel utilizing zero-config deployment architecture.
 - **Backend Inference API**: Containerized leveraging Docker and deployed continuously.
@@ -75,9 +75,7 @@ The codebase operates in a monorepo format seamlessly segregating Frontend and B
 
 > Make sure to update the repository links to match your actual deployed URLs!
 
-## 🤝 Contact & Developer Info
-
-Built with passion to transform the agritech sector.  
+## Contact & Developer Info 
 **Built By**: Surya Prakash B  
 **Email**: [suryaprakashb2006@gmail.com](mailto:suryaprakashb2006@gmail.com)  
 
