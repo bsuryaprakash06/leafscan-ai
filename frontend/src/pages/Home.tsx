@@ -219,7 +219,7 @@ export default function LeafScanLanding() {
                                     navigate(item.route);
                                 }
                                 if (item.id) {
-                                    setTimeout(() => document.getElementById(item.id)?.scrollIntoView({ behavior: "smooth" }), 100);
+                                    setTimeout(() => document.getElementById(item.id as string)?.scrollIntoView({ behavior: "smooth" }), 100);
                                 }
                             }}
                             className={`px-4 py-2 rounded-lg text-[13px] font-medium transition-all duration-300 ease-out border border-transparent ${activeNav === item.key
