@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom"
 import { motion } from "framer-motion"
 import { getTranslation } from "../data/i18n"
 import type { Language } from "../data/i18n"
+import leafBg from "../assets/leaf-bg.png"
 
 const diseaseData = {
     Tomato: ["Early blight", "Late blight", "Leaf Mold", "Septoria leaf spot", "Healthy"],
@@ -243,10 +244,10 @@ export default function LeafScanLanding() {
                         <option value="hi">हिंदी</option>
                     </select>
 
-                    <button className="hidden sm:flex items-center gap-2 bg-transparent border border-green-500/40 text-green-400 px-3 md:px-4 py-1.5 md:py-2 rounded-lg text-xs md:text-sm font-medium transition-all duration-300 ease-out hover:bg-green-500/10 active:scale-95">
+                    <a href="https://github.com/bsuryaprakash06/leafscan-ai" target="_blank" rel="noopener noreferrer" className="hidden sm:flex items-center gap-2 bg-transparent border border-green-500/40 text-green-400 px-3 md:px-4 py-1.5 md:py-2 rounded-lg text-xs md:text-sm font-medium transition-all duration-300 ease-out hover:bg-green-500/10 active:scale-95">
                         <GitHubIcon size={15} />
                         GitHub
-                    </button>
+                    </a>
                     <button className="lg:hidden bg-transparent border-none cursor-pointer text-white/65 p-1 flex items-center transition-all duration-300 ease-out hover:text-green-400 active:scale-95">
                         <MenuIcon />
                     </button>
@@ -258,7 +259,7 @@ export default function LeafScanLanding() {
 
                 {/* Background image layer - Responsive */}
                 <img
-                    src="/src/assets/leaf-bg.png"
+                    src={leafBg}
                     alt="leaf"
                     className="absolute right-[-10%] md:right-[30%] top-3/4 md:top-3/4 -translate-y-1/2 w-[80%] md:w-[40%] max-w-[850px] opacity-20 md:opacity-65 pointer-events-none z-0 brightness-[1.2] contrast-[1.2] animate-[floatLeaf_6s_ease-in-out_infinite]"
                 />
