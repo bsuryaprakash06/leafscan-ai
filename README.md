@@ -73,8 +73,6 @@ The codebase operates in a monorepo format seamlessly segregating Frontend and B
 - **Backend Inference API**: Containerized leveraging Docker and deployed continuously.
 - **Model Storage**: Utilizes HuggingFace Spaces/Git-LFS for rapid model binary hosting.
 
-> Make sure to update the repository links to match your actual deployed URLs!
-
 ## Contact & Developer Info 
 **Built By**: Surya Prakash B  
 **Email**: [suryaprakashb2006@gmail.com](mailto:suryaprakashb2006@gmail.com)  
