@@ -13,22 +13,21 @@ classes = None
 def load_model():
     global model, classes
 
-    print("Loading Hybrid Model...")
-
     model_path = os.path.join(os.path.dirname(__file__), "hybrid_model.pth")
+    if not os.path.exists(model_path):
+        print(f"Warning: Model checkpoint '{model_path}' not found.")
+        print("Please download 'hybrid_model.pth' from https://huggingface.co/xshane and place it in backend/ directory.")
+        return
 
+    print("Loading Hybrid Model...")
     checkpoint = torch.load(model_path, map_location=device)
-
     classes = checkpoint["classes"]
 
     model = models.mobilenet_v2(weights=None)
     model.classifier[1] = nn.Linear(model.last_channel, len(classes))
-
     model.load_state_dict(checkpoint["state_dict"])
-
     model.to(device)
     model.eval()
-
     print("Model loaded successfully")
 
 
@@ -44,6 +43,12 @@ transform = transforms.Compose([
 ])
 
 def predict(image_bytes):
+    if model is None or classes is None:
+        raise RuntimeError(
+            "Model checkpoint not loaded. Please ensure 'hybrid_model.pth' "
+            "is downloaded from https://huggingface.co/xshane and placed in the backend/ directory."
+        )
+
     image = Image.open(io.BytesIO(image_bytes)).convert("RGB")
 
     img_tensor = transform(image).unsqueeze(0).to(device)

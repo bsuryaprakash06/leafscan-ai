@@ -1,8 +1,12 @@
-from fastapi import FastAPI, File, UploadFile
+from fastapi import FastAPI, File, UploadFile, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from model import predict
 
-app = FastAPI()
+app = FastAPI(
+    title="LeafScan AI Backend",
+    description="Real-Time Plant Disease Diagnosis REST API",
+    version="1.0.0"
+)
 
 app.add_middleware(
     CORSMiddleware,
@@ -14,10 +18,15 @@ app.add_middleware(
 
 @app.get("/")
 def home():
-    return {"message": "LeafScan API running"}
+    return {"status": "online", "message": "LeafScan API running"}
 
 @app.post("/predict")
 async def predict_api(file: UploadFile = File(...)):
-    image_bytes = await file.read()
-    result = predict(image_bytes)
-    return result
+    try:
+        image_bytes = await file.read()
+        result = predict(image_bytes)
+        return result
+    except RuntimeError as e:
+        raise HTTPException(status_code=503, detail=str(e))
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=f"Image processing failed: {str(e)}")

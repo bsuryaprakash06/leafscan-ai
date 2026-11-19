@@ -6,7 +6,7 @@ import { getTranslation } from "../data/i18n"
 import type { Language } from "../data/i18n"
 import { analyzeImageQuality } from "../utils/quality"
 
-const API_URL = import.meta.env.VITE_API_URL
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:7860"
 
 const STACK_BADGES = [
     ["#F97316", "PyTorch"],
